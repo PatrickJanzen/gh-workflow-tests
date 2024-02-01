@@ -15,6 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: prefix
-        if: ${{ !endsWith(GITHUB_REF, 'master') }}
+        if: ${{ !endsWith(github.ref, 'master') }}
         run: echo "prefix=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
       - run: echo ${steps.prefix.outputs.prefix}
