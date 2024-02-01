@@ -14,7 +14,7 @@ jobs:
     name: Test 1
     runs-on: ubuntu-latest
     steps:
-      - id: isMaster
-        run: echo ${GITHUB_HEAD_REF}
-      - id: isMaster2
-        run: echo ${GITHUB_REF}
+      - id: prefix
+        if: ${{ !ends_with(GITHUB_REF, 'master') }}
+        run: echo "prefix=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      - run: echo ${steps.prefix.outputs.prefix}
