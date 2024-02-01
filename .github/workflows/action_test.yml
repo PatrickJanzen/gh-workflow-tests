@@ -4,19 +4,15 @@ on:
     types: [ opened, synchronize ]
     branches:
       - 'master'
-
+  pull_request_target:
+    types:
+      - closed
+    branches:
+      - 'main'
 jobs:
-  job-a:
-    name: Job A
+  test1:
+    name: Test 1
     runs-on: ubuntu-latest
     steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        id: extract_branch
-      - run: echo ${{ steps.extract_branch.outputs.branch }}
-  job-b:
-    name: Job B
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ steps.extract_branch.outputs.branch }}
+      - id: isMaster
+        run: echo ${GITHUB_REF_NAME}
