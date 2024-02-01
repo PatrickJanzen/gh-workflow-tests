@@ -16,3 +16,5 @@ jobs:
     steps:
       - id: isMaster
         run: echo ${GITHUB_HEAD_REF}
+      - id: isMaster2
+        run: echo ${GITHUB_REF}
