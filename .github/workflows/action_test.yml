@@ -18,6 +18,6 @@ jobs:
         if: ${{ !endsWith(github.ref, 'master') }}
         run: echo "prefix=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
       - run: echo ${{ steps.prefix.outputs.prefix }}
-      - run: echo "::notice:: test"
-      - run: echo "::warning:: test"
-      - run: echo "::error:: test"
+      - run: echo "::notice::test"
+      - run: echo "::warning::test"
+      - run: echo "::error::test"
