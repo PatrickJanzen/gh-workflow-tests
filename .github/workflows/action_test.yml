@@ -19,6 +19,16 @@ jobs:
         if: ${{ !endsWith(github.ref, 'master') }}
         run: echo "prefix=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
       - run: echo ${{ steps.prefix.outputs.prefix }}
-      - run: echo "::notice::test"
-      - run: echo "::warning::test"
-      - run: echo "::error::test"
+      - run: |
+          echo '::notice::Workflow for rdss/brickfox-health-check was success. Link to dependent workflow: https://github.com/ZooRoyal/RdssBrickfoxHealthCheck/actions/runs/8293550189'
+          echo '::warning::Workflow for rdss/sitemap was failure. Link to dependent workflow: https://github.com/ZooRoyal/RdssSitemap/actions/runs/8293550176'
+          echo '::notice::Workflow for rdss/ssr-monitor was success. Link to dependent workflow: https://github.com/ZooRoyal/RdssSSrMonitor/actions/runs/8293550224'
+          echo '::notice::Workflow for rdss/ilert was success. Link to dependent workflow: https://github.com/ZooRoyal/RdssIlert/actions/runs/8293550199'
+          echo '::notice::Workflow for rdss/weinfreunde was success. Link to dependent workflow: https://github.com/ZooRoyal/weinfreunde/actions/runs/8293550110'
+          echo '::warning::Workflow for rdss/emarsys was failure. Link to dependent workflow: https://github.com/ZooRoyal/RdssEmarsys/actions/runs/8293550239'
+          echo '::warning::Workflow for rdss/commercetoolsconnector was failure. Link to dependent workflow: https://github.com/ZooRoyal/ct-connector/actions/runs/8293550234'
+          echo '::notice::Workflow for rdss/zooroyal was success. Link to dependent workflow: https://github.com/ZooRoyal/zooroyalweb/actions/runs/8293550140'
+          echo '::warning::Workflow for rdss/trusted-shops was failure. Link to dependent workflow: https://github.com/ZooRoyal/RdssTrustedShops/actions/runs/8293550262'
+          echo '::warning::Workflow for rdss/channel-pilot was failure. Link to dependent workflow: https://github.com/ZooRoyal/RdssChannelPilot/actions/runs/8293550203'
+          echo '::warning::Workflow for rdss/findologic-export was failure. Link to dependent workflow: https://github.com/ZooRoyal/RdssFindologicExport/actions/runs/8293550254'
+          echo '::warning::Workflow for zooroyal/payback was failure. Link to dependent workflow: https://github.com/ZooRoyal/ZRPayback/actions/runs/8293550223'
