@@ -15,6 +15,7 @@ jobs:
     name: Test 1
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{ github.run_attempt }}
       - id: prefix
         if: ${{ !endsWith(github.ref, 'master') }}
         run: echo "prefix=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
