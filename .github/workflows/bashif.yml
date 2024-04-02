@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+jobs:
+  call-out-abandoned-parameters:
+    runs-on: self-hosted
+    steps:
+      - name: bashif
+        run: |
+          if [[ "12" -lt "13" -a "$OUTPUT" == *"The MSI is"*"% percentage points over the required MSI"* ]]
+          then
+            echo "::error ::In order to recognize MSI improvements the infection.json.dist must be correct, but the reached MSI is above the configured minMSI. Please adjust your infection.json.dist to match configured minMSI to actual MSI"
+            exit 1
+          fi
