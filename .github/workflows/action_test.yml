@@ -24,4 +24,5 @@ jobs:
           echo '::notice::Workflow for blah was success. Link to dependent workflow: https://'
           echo '::warning::Workflow for blubb was failure. Link to dependent workflow: https://'
           echo '::error::Workflow for welt was success. Link to dependent workflow: https://'
+      - run: printenv
          
