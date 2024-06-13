@@ -10,7 +10,7 @@ jobs:
   create:
     name: Test 1
     environment:
-      url: http://www.example.org
+      url: 'http://www.example.org'
     runs-on: ubuntu-latest
     steps:
       - run: echo hello
