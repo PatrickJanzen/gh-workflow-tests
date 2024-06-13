@@ -1,0 +1,25 @@
+name: 'create'
+on:
+  workflow_dispatch:
+
+jobs:
+  create:
+    name: Test 1
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hello
+      - run: echo hello > test.txt
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test
+          path: |
+            *.txt
+      - run: rm *.txt
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: test
+      - run: ls -R
+    
+         
