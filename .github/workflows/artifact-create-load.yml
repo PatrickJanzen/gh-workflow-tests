@@ -1,7 +1,11 @@
 name: 'create-load'
 on:
   workflow_dispatch:
-
+concurrency:
+  group: publish-wiki
+  cancel-in-progress: true
+permissions:
+  contents: write
 jobs:
   create:
     name: Test 1
@@ -21,5 +25,10 @@ jobs:
         with:
           name: test
       - run: ls -R
+      - name: GitHub Wiki Action
+        uses: Andrew-Chen-Wang/github-wiki-action@v4.4.0
+        with:
+          path: .
+
     
          
