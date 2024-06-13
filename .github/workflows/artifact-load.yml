@@ -1,0 +1,14 @@
+name: 'load'
+on:
+  workflow_dispatch:
+
+jobs:
+  create:
+    name: Test 2
+    runs-on: ubuntu-latest
+    steps:
+      - name: upload artifact
+        uses: actions/download-artifact@v4
+      - run: ls -R
+
+         
