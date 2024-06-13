@@ -10,6 +10,7 @@ jobs:
   create:
     name: Test 1
     environment:
+      name: hi
       url: "http://www.example.org"
     runs-on: ubuntu-latest
     steps:
