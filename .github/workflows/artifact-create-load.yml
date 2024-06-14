@@ -11,7 +11,7 @@ jobs:
     name: Test 1
     environment:
       name: hi
-      url: "http://www.example.org"
+      url: ho
     runs-on: ubuntu-latest
     steps:
       - run: echo hello
