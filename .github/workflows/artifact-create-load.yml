@@ -11,7 +11,7 @@ jobs:
     name: Test 1
     environment:
       name: hi
-      url: ho
+      url: europe-west1-docker.pkg.dev/rd-itv-core-prod-bf93/itv-docker/itv-fpm-dev:php8.2-node18-pnpm7.9-add-bcmath
     runs-on: ubuntu-latest
     steps:
       - run: echo hello
