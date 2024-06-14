@@ -14,22 +14,9 @@ jobs:
       url: europe-west1-docker.pkg.dev/rd-itv-core-prod-bf93/itv-docker/itv-fpm-dev:php8.2-node18-pnpm7.9-add-bcmath
     runs-on: ubuntu-latest
     steps:
+      - run: ls -R
       - run: echo hello
       - run: echo hello > test.txt
-      - name: upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: test
-          path: |
-            *.txt
-      - run: rm *.txt
-      - name: download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: test
-      - run: ls -R
-      - name: GitHub Wiki Action
-        uses: Andrew-Chen-Wang/github-wiki-action@v4.4.0
       - run: ls -R
 
     
